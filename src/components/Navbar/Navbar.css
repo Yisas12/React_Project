@@ -1,0 +1,41 @@
+nav{
+    padding: 10px;
+    background-color:red;
+    color: white;
+}
+
+ul{
+    display: inline;
+    
+}
+
+li{
+    display: inline; 
+    vertical-align: middle;
+}
+
+.icon{
+    color: white;
+    height: 30px;
+    width: 30px;
+}
+.nav-der{
+    display: inline;
+}
+
+.nav-der-li{
+    float: right;
+    
+    
+}
+
+.nav-der-li-2{
+    vertical-align: middle;
+    float: right;
+    color: white;
+    margin-right: 15px;
+}
+
+.searchinput{
+    margin-left: 15px;
+}
