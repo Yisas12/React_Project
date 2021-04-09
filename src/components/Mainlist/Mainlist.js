@@ -27,20 +27,38 @@ class Mainlist extends React.Component{
     render(){
         return(
             <div>
-                <h1> Principal</h1>
+                {this.props.isInCompleted
+                  ?  <React.Fragment>
+                        <h1> Completed </h1>
+                    </React.Fragment>
+                    
+                  : <React.Fragment>
+
+                    {this.props.isFav
+                      ? <React.Fragment>
+                            <h1> Favourites</h1>
+                        </React.Fragment>
+                      : <React.Fragment>
+                          <h1> Principal </h1>
+                      </React.Fragment>
+                    }
+                    </React.Fragment>
+                }
+                
+                <hr/>
                 <React.Fragment>
                     {this.props.isCompleted
                         ? <React.Fragment>
                             <input type="text" name="name" onChange={this.handleInput}></input>
                         
                             <div>
-                            <button onClick={this.handleAddTask}>Añadir tarea</button>
+                            <button onClick={this.handleAddTask}>Add task</button>
                             <button type="submit" onClick={this.props.setIsCompleted}>Back</button>
                             </div>
                             
                         </React.Fragment>
                         : <React.Fragment>
-                                <Card tasks={this.props.cards} addToCompleted={this.props.addToCompleted} pathCompleted={this.props.pathCompleted}/>
+                                <Card tasks={this.props.cards} addToCompleted={this.props.addToCompleted} addToFavourite={this.props.addToFavourite} addToCompletedFav={this.props.addToCompletedFav} pathCompleted={this.props.pathCompleted} isFav={this.props.isFav}/>
                                 <div className="princ-butt">
                                     <FontAwesomeIcon className="princ-butt-1" onClick={this.props.setIsCompleted} icon={faPlus} />
                                     <button className="princ-butt-2" onClick={this.props.setIsCompleted}>Add tasks</button>

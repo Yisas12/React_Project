@@ -15,7 +15,7 @@ class Navbar extends React.Component {
         
         <ul>
           <Link to="/">
-            <li><FontAwesomeIcon class="icon" icon={faHome}></FontAwesomeIcon></li>
+            <li><FontAwesomeIcon className="icon" icon={faHome}></FontAwesomeIcon></li>
           </Link>
           <li>
             <input className="searchinput" placeholder="search"></input>
@@ -23,7 +23,7 @@ class Navbar extends React.Component {
         </ul>
         <ul className="nav-der">
             <li className="nav-der-li">
-              <FontAwesomeIcon class="icon" icon={faPlus} onClick={this.props.setIsCompleted}/>
+              <FontAwesomeIcon className="icon" icon={faPlus} onClick={this.props.setIsCompleted}/>
             </li>
 
               <Link className="nav-der-li-2" to="/completed">
@@ -31,7 +31,11 @@ class Navbar extends React.Component {
                   Completed tasks
                 </li>
               </Link>
-            
+              <Link className="nav-der-li-2" to="/favourites">
+                <li>
+                  Favourites
+                </li>
+              </Link>
         </ul>
       </nav>
     );
